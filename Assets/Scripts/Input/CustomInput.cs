@@ -326,8 +326,180 @@ namespace NewerInput
         {
             ""name"": ""Detective"",
             ""id"": ""8d50a705-b6cd-430d-acb6-3c7463fecb10"",
-            ""actions"": [],
-            ""bindings"": []
+            ""actions"": [
+                {
+                    ""name"": ""Pan"",
+                    ""type"": ""Value"",
+                    ""id"": ""767ef0c3-45d8-4511-807d-d35da5d35d48"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Mark"",
+                    ""type"": ""Button"",
+                    ""id"": ""c02b3ced-927e-483a-8b1b-26ec9088431a"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""UndoMark"",
+                    ""type"": ""Button"",
+                    ""id"": ""c3713991-bdcf-47f6-aae9-9f465ac7ab5f"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""ddc17ce5-99ce-4a0a-a786-ee181179e08e"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Gamepad"",
+                    ""action"": ""Pan"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""ae2bc588-2acc-4ba9-9d30-1c73ddc601fd"",
+                    ""path"": ""Dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pan"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""8ec12d14-4aac-4d6c-b86b-6245b1798d4e"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Pan"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""c1aa1a19-4073-4486-897a-7f5398ede077"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Pan"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""f8781653-d682-4b8f-9e0f-b48d58d48335"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Pan"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""ae023a44-842f-44dd-aed7-a982d1a1998e"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Pan"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""4aba1b27-747b-4ecd-aff8-27894e6b667f"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Pan"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""ff2ab918-ab99-4631-a97a-13c464e7f7dc"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Pan"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""835058e8-d913-4653-9262-cbbc87fa5149"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Pan"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""54459927-f64c-42a5-a1e5-0ee810767495"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Pan"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3f83de3b-afd2-4a1a-9e3e-06de01aeff06"",
+                    ""path"": ""<XRController>/{Primary2DAxis}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""Pan"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""33aad6f5-0251-4a63-b44a-5fdc12dfad31"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Mark"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1594a3fe-e6c8-46c9-a6ac-7092d7400ba5"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UndoMark"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         },
         {
             ""name"": ""UI"",
@@ -916,6 +1088,9 @@ namespace NewerInput
             m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
             // Detective
             m_Detective = asset.FindActionMap("Detective", throwIfNotFound: true);
+            m_Detective_Pan = m_Detective.FindAction("Pan", throwIfNotFound: true);
+            m_Detective_Mark = m_Detective.FindAction("Mark", throwIfNotFound: true);
+            m_Detective_UndoMark = m_Detective.FindAction("UndoMark", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1128,6 +1303,9 @@ namespace NewerInput
         // Detective
         private readonly InputActionMap m_Detective;
         private List<IDetectiveActions> m_DetectiveActionsCallbackInterfaces = new List<IDetectiveActions>();
+        private readonly InputAction m_Detective_Pan;
+        private readonly InputAction m_Detective_Mark;
+        private readonly InputAction m_Detective_UndoMark;
         /// <summary>
         /// Provides access to input actions defined in input action map "Detective".
         /// </summary>
@@ -1139,6 +1317,18 @@ namespace NewerInput
             /// Construct a new instance of the input action map wrapper class.
             /// </summary>
             public DetectiveActions(@CustomInput wrapper) { m_Wrapper = wrapper; }
+            /// <summary>
+            /// Provides access to the underlying input action "Detective/Pan".
+            /// </summary>
+            public InputAction @Pan => m_Wrapper.m_Detective_Pan;
+            /// <summary>
+            /// Provides access to the underlying input action "Detective/Mark".
+            /// </summary>
+            public InputAction @Mark => m_Wrapper.m_Detective_Mark;
+            /// <summary>
+            /// Provides access to the underlying input action "Detective/UndoMark".
+            /// </summary>
+            public InputAction @UndoMark => m_Wrapper.m_Detective_UndoMark;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -1165,6 +1355,15 @@ namespace NewerInput
             {
                 if (instance == null || m_Wrapper.m_DetectiveActionsCallbackInterfaces.Contains(instance)) return;
                 m_Wrapper.m_DetectiveActionsCallbackInterfaces.Add(instance);
+                @Pan.started += instance.OnPan;
+                @Pan.performed += instance.OnPan;
+                @Pan.canceled += instance.OnPan;
+                @Mark.started += instance.OnMark;
+                @Mark.performed += instance.OnMark;
+                @Mark.canceled += instance.OnMark;
+                @UndoMark.started += instance.OnUndoMark;
+                @UndoMark.performed += instance.OnUndoMark;
+                @UndoMark.canceled += instance.OnUndoMark;
             }
 
             /// <summary>
@@ -1176,6 +1375,15 @@ namespace NewerInput
             /// <seealso cref="DetectiveActions" />
             private void UnregisterCallbacks(IDetectiveActions instance)
             {
+                @Pan.started -= instance.OnPan;
+                @Pan.performed -= instance.OnPan;
+                @Pan.canceled -= instance.OnPan;
+                @Mark.started -= instance.OnMark;
+                @Mark.performed -= instance.OnMark;
+                @Mark.canceled -= instance.OnMark;
+                @UndoMark.started -= instance.OnUndoMark;
+                @UndoMark.performed -= instance.OnUndoMark;
+                @UndoMark.canceled -= instance.OnUndoMark;
             }
 
             /// <summary>
@@ -1505,6 +1713,27 @@ namespace NewerInput
         /// <seealso cref="DetectiveActions.RemoveCallbacks(IDetectiveActions)" />
         public interface IDetectiveActions
         {
+            /// <summary>
+            /// Method invoked when associated input action "Pan" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnPan(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Mark" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnMark(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "UndoMark" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnUndoMark(InputAction.CallbackContext context);
         }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

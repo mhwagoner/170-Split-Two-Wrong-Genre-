@@ -45,9 +45,15 @@ public class InputReader : ScriptableObject, CustomInput.IPlayerActions, CustomI
         customInput.Detective.Disable();
     }
 
+    //PLATFORMING
     public event Action<Vector2> MoveEvent;
     public event Action JumpEvent;
     public event Action DashEvent;
+
+    //DETECTIVE
+    public event Action<Vector2> PanEvent;
+    public event Action MarkEvent;
+    public event Action UndoMarkEvent;
 
     public void OnJump(InputAction.CallbackContext context)
     {
@@ -67,6 +73,27 @@ public class InputReader : ScriptableObject, CustomInput.IPlayerActions, CustomI
         if (context.phase == InputActionPhase.Performed)
         {
             DashEvent?.Invoke();
+        }
+    }
+
+    public void OnPan(InputAction.CallbackContext context)
+    {
+        PanEvent?.Invoke(context.ReadValue<Vector2>());
+    }
+
+    public void OnMark(InputAction.CallbackContext context)
+    { 
+        if (context.phase == InputActionPhase.Performed)
+        {
+            MarkEvent?.Invoke();
+        }
+    }
+
+    public void OnUndoMark(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            UndoMarkEvent?.Invoke();
         }
     }
 }
