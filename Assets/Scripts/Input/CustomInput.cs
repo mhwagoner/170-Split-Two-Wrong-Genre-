@@ -120,6 +120,15 @@ namespace NewerInput
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Ability1"",
+                    ""type"": ""Button"",
+                    ""id"": ""a980189a-1bf9-402c-8ff2-042d34858f26"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -318,6 +327,17 @@ namespace NewerInput
                     ""processors"": """",
                     ""groups"": ""XR"",
                     ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ab64b6e6-4c98-4baf-8b4e-65c83aa41e4f"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Ability1"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1086,6 +1106,7 @@ namespace NewerInput
             m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
             m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
             m_Player_Dash = m_Player.FindAction("Dash", throwIfNotFound: true);
+            m_Player_Ability1 = m_Player.FindAction("Ability1", throwIfNotFound: true);
             // Detective
             m_Detective = asset.FindActionMap("Detective", throwIfNotFound: true);
             m_Detective_Pan = m_Detective.FindAction("Pan", throwIfNotFound: true);
@@ -1188,6 +1209,7 @@ namespace NewerInput
         private readonly InputAction m_Player_Move;
         private readonly InputAction m_Player_Jump;
         private readonly InputAction m_Player_Dash;
+        private readonly InputAction m_Player_Ability1;
         /// <summary>
         /// Provides access to input actions defined in input action map "Player".
         /// </summary>
@@ -1211,6 +1233,10 @@ namespace NewerInput
             /// Provides access to the underlying input action "Player/Dash".
             /// </summary>
             public InputAction @Dash => m_Wrapper.m_Player_Dash;
+            /// <summary>
+            /// Provides access to the underlying input action "Player/Ability1".
+            /// </summary>
+            public InputAction @Ability1 => m_Wrapper.m_Player_Ability1;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -1246,6 +1272,9 @@ namespace NewerInput
                 @Dash.started += instance.OnDash;
                 @Dash.performed += instance.OnDash;
                 @Dash.canceled += instance.OnDash;
+                @Ability1.started += instance.OnAbility1;
+                @Ability1.performed += instance.OnAbility1;
+                @Ability1.canceled += instance.OnAbility1;
             }
 
             /// <summary>
@@ -1266,6 +1295,9 @@ namespace NewerInput
                 @Dash.started -= instance.OnDash;
                 @Dash.performed -= instance.OnDash;
                 @Dash.canceled -= instance.OnDash;
+                @Ability1.started -= instance.OnAbility1;
+                @Ability1.performed -= instance.OnAbility1;
+                @Ability1.canceled -= instance.OnAbility1;
             }
 
             /// <summary>
@@ -1705,6 +1737,13 @@ namespace NewerInput
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnDash(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Ability1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnAbility1(InputAction.CallbackContext context);
         }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Detective" which allows adding and removing callbacks.
