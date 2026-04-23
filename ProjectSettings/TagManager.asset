@@ -13,8 +13,8 @@ TagManager:
   - UI
   - Player
   - Clickable
-  - 
-  - 
+  - Post
+  - Dark
   - 
   - 
   - 
@@ -40,6 +40,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Dark
+    uniqueID: 2227182931
     locked: 0
   m_RenderingLayers:
   - Default
