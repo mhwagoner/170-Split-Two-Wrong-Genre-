@@ -8594,7 +8594,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1313770568
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9571,7 +9571,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bab5830ec6dfc4f4cbc8430706b4dbc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Flashlight
+  inputReader: {fileID: 11400000, guid: 17b107022b90e2041bfe2afa005c4df0, type: 2}
   mask: {fileID: 1594319032}
+  maxUses: 3
+  duration: 5
 --- !u!1 &1686132722
 GameObject:
   m_ObjectHideFlags: 0
@@ -10879,6 +10882,7 @@ MonoBehaviour:
   throwForce: 10
   throwPoint: {fileID: 571702823}
   cooldownTime: 2
+  maxThrows: 5
 --- !u!1 &2137330337
 GameObject:
   m_ObjectHideFlags: 0

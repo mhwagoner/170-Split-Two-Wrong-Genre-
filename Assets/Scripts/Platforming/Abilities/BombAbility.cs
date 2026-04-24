@@ -7,6 +7,8 @@ public class BombAbility : MonoBehaviour
     [SerializeField] private float throwForce;
     [SerializeField] private Transform throwPoint;
     [SerializeField] private float cooldownTime = 2f;
+    [SerializeField] private int maxThrows = 5;
+    private int throwsCount;
     private bool canThrow;
 
     private Vector2 moveInput;
@@ -37,7 +39,7 @@ public class BombAbility : MonoBehaviour
 
     private void HandleThrow()
     {
-        if (!canThrow) return;
+        if (!canThrow || throwsCount > maxThrows) return;
 
         ThrowBomb();
     }
@@ -51,6 +53,7 @@ public class BombAbility : MonoBehaviour
 
     private void ThrowBomb()
     {
+        throwsCount++;
         canThrow = false;
         GameObject b = Instantiate(bomb, throwPoint.position, Quaternion.identity);
         Rigidbody2D rb = b.GetComponent<Rigidbody2D>();
