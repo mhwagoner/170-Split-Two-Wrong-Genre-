@@ -50,6 +50,7 @@ public class InputReader : ScriptableObject, CustomInput.IPlayerActions, CustomI
     public event Action JumpEvent;
     public event Action DashEvent;
     public event Action Ability1Event;
+    public event Action Ability2Event;
 
     //DETECTIVE
     public event Action<Vector2> PanEvent;
@@ -103,6 +104,14 @@ public class InputReader : ScriptableObject, CustomInput.IPlayerActions, CustomI
         if (context.phase == InputActionPhase.Performed)
         {
             UndoMarkEvent?.Invoke();
+        }
+    }
+
+    public void OnAbility2(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            Ability2Event?.Invoke();
         }
     }
 }
