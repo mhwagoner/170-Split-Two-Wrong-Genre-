@@ -7,6 +7,7 @@ public class Bomb : MonoBehaviour
     [SerializeField] private LayerMask layerMask;
     [SerializeField] private float explosionTime = 2f;
     [SerializeField] private float explosionRadius;
+    public AudioClip explosionSFX;
 
     private bool hasExploded;
 
@@ -17,6 +18,8 @@ public class Bomb : MonoBehaviour
 
     private void Explode()
     {
+        SoundManager.instance.PlayAudio(explosionSFX, this.transform, 1);
+
         if (hasExploded) return;
         hasExploded = true;
 
