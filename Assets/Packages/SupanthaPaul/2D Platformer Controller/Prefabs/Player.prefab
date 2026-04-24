@@ -273,6 +273,12 @@ MonoBehaviour:
   slideSpeed: 2.5
   wallJumpForce: {x: 10.5, y: 18}
   wallClimbForce: {x: 4, y: 14}
+  jumpSFX: {fileID: 8300000, guid: 953745a5b1929c447a5e609d37779cb0, type: 3}
+  footStepSFX_1: {fileID: 8300000, guid: d7d86377a034470429088aa05c1767e9, type: 3}
+  footStepSFX_2: {fileID: 8300000, guid: 8f1ab92dcabe5ed4ea53748cd8e2ea9f, type: 3}
+  footStepSFX_3: {fileID: 8300000, guid: 4132ebd8196c0b24d9293332e62d3133, type: 3}
+  footStepSFX_4: {fileID: 8300000, guid: a798390fd2f888042a8c087db87418cf, type: 3}
+  footStepSFX_5: {fileID: 8300000, guid: 6f2460bc002a71042bdd0ad8f411dbcb, type: 3}
 --- !u!114 &1173712999407116002
 MonoBehaviour:
   m_ObjectHideFlags: 0
