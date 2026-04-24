@@ -175,3 +175,5 @@ MonoBehaviour:
     m_Bits: 3072
   explosionTime: 1
   explosionRadius: 2.8
+  audioManager: {fileID: 0}
+  explosionSFX: {fileID: 8300000, guid: c170c80c767c94d62a9db14eaae83484, type: 3}
