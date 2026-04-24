@@ -56,6 +56,7 @@ public class InputReader : ScriptableObject, CustomInput.IPlayerActions, CustomI
     public event Action<Vector2> PanEvent;
     public event Action MarkEvent;
     public event Action UndoMarkEvent;
+    public event Action ToggleEvent;
 
     public void OnJump(InputAction.CallbackContext context)
     {
@@ -112,6 +113,14 @@ public class InputReader : ScriptableObject, CustomInput.IPlayerActions, CustomI
         if (context.phase == InputActionPhase.Performed)
         {
             Ability2Event?.Invoke();
+        }
+    }
+
+    public void OnToggle(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed)
+        {
+            ToggleEvent?.Invoke();
         }
     }
 }

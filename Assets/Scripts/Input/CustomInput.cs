@@ -393,6 +393,15 @@ namespace NewerInput
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Toggle"",
+                    ""type"": ""Button"",
+                    ""id"": ""cbee4ad8-b1ad-4612-9686-c2dfe9778907"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -536,6 +545,17 @@ namespace NewerInput
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""UndoMark"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a8b08c98-252b-4daa-9d0b-53ff5077ddf9"",
+                    ""path"": ""<Keyboard>/t"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Toggle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1133,6 +1153,7 @@ namespace NewerInput
             m_Detective_Pan = m_Detective.FindAction("Pan", throwIfNotFound: true);
             m_Detective_Mark = m_Detective.FindAction("Mark", throwIfNotFound: true);
             m_Detective_UndoMark = m_Detective.FindAction("UndoMark", throwIfNotFound: true);
+            m_Detective_Toggle = m_Detective.FindAction("Toggle", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1370,6 +1391,7 @@ namespace NewerInput
         private readonly InputAction m_Detective_Pan;
         private readonly InputAction m_Detective_Mark;
         private readonly InputAction m_Detective_UndoMark;
+        private readonly InputAction m_Detective_Toggle;
         /// <summary>
         /// Provides access to input actions defined in input action map "Detective".
         /// </summary>
@@ -1393,6 +1415,10 @@ namespace NewerInput
             /// Provides access to the underlying input action "Detective/UndoMark".
             /// </summary>
             public InputAction @UndoMark => m_Wrapper.m_Detective_UndoMark;
+            /// <summary>
+            /// Provides access to the underlying input action "Detective/Toggle".
+            /// </summary>
+            public InputAction @Toggle => m_Wrapper.m_Detective_Toggle;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -1428,6 +1454,9 @@ namespace NewerInput
                 @UndoMark.started += instance.OnUndoMark;
                 @UndoMark.performed += instance.OnUndoMark;
                 @UndoMark.canceled += instance.OnUndoMark;
+                @Toggle.started += instance.OnToggle;
+                @Toggle.performed += instance.OnToggle;
+                @Toggle.canceled += instance.OnToggle;
             }
 
             /// <summary>
@@ -1448,6 +1477,9 @@ namespace NewerInput
                 @UndoMark.started -= instance.OnUndoMark;
                 @UndoMark.performed -= instance.OnUndoMark;
                 @UndoMark.canceled -= instance.OnUndoMark;
+                @Toggle.started -= instance.OnToggle;
+                @Toggle.performed -= instance.OnToggle;
+                @Toggle.canceled -= instance.OnToggle;
             }
 
             /// <summary>
@@ -1812,6 +1844,13 @@ namespace NewerInput
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnUndoMark(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Toggle" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnToggle(InputAction.CallbackContext context);
         }
         /// <summary>
         /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

@@ -65,6 +65,13 @@ namespace SupanthaPaul
         private bool m_jumpPressed = false;
         private bool m_sprintDashed = false;
 
+        private AudioSource audioSource;
+        public AudioClip jumpSFX;
+        public AudioClip footStepSFX_1;
+        public AudioClip footStepSFX_2;
+        public AudioClip footStepSFX_3;
+        public AudioClip footStepSFX_4;
+        public AudioClip footStepSFX_5;
 
         private void OnEnable()
         {
@@ -97,6 +104,7 @@ namespace SupanthaPaul
 
         void Start()
         {
+            audioSource = this.GetComponent<AudioSource>();
             // create pools for particles
             PoolManager.instance.CreatePool(dashEffect, 2);
             PoolManager.instance.CreatePool(jumpEffect, 2);
@@ -143,8 +151,10 @@ namespace SupanthaPaul
                 }
                 else
                 {
-                    if (canMove && !m_wallGrabbing)
+                    if (canMove && !m_wallGrabbing){
                         m_rb.linearVelocity = new Vector2(moveInput * speed, m_rb.linearVelocity.y);
+                        if(!audioSource.isPlaying && moveInput != 0 && isGrounded){ audioSource.PlayOneShot(footStepSFX_1); } //play step SFX
+                    }
                     else if (!canMove)
                         m_rb.linearVelocity = new Vector2(0f, m_rb.linearVelocity.y);
                 }
@@ -253,12 +263,16 @@ namespace SupanthaPaul
 
                 if (m_extraJumps > 0 && !isGrounded && !m_wallGrabbing)                        // extra jumping
                 {
+                    audioSource.PlayOneShot(jumpSFX); //play jump sfx
+
                     m_rb.linearVelocity = new Vector2(m_rb.linearVelocity.x, m_extraJumpForce);
                     m_extraJumps--;
                     PoolManager.instance.ReuseObject(jumpEffect, groundCheck.position, Quaternion.identity);
                 }
                 else if (isGrounded || m_groundedRemember > 0f)                                 // normal single jumping
                 {
+                    audioSource.PlayOneShot(jumpSFX); //play jump sfx
+
                     m_rb.linearVelocity = new Vector2(m_rb.linearVelocity.x, jumpForce);
                     PoolManager.instance.ReuseObject(jumpEffect, groundCheck.position, Quaternion.identity);
                 }
