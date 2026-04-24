@@ -269,12 +269,12 @@ MonoBehaviour:
   isDashing: 0
   actuallyWallGrabbing: 0
   isCurrentlyPlayable: 0
-  grabRightOffset: {x: 0.16, y: 0}
-  grabLeftOffset: {x: -0.16, y: 0}
-  grabCheckRadius: 0.24
-  slideSpeed: 2.5
-  wallJumpForce: {x: 10.5, y: 18}
-  wallClimbForce: {x: 4, y: 14}
+  grabRightOffset: {x: 0, y: 0}
+  grabLeftOffset: {x: 0, y: 0}
+  grabCheckRadius: 0
+  slideSpeed: 0
+  wallJumpForce: {x: 0, y: 0}
+  wallClimbForce: {x: 0, y: 0}
   jumpSFX: {fileID: 8300000, guid: 953745a5b1929c447a5e609d37779cb0, type: 3}
   footStepSFX_1: {fileID: 8300000, guid: d7d86377a034470429088aa05c1767e9, type: 3}
   footStepSFX_2: {fileID: 8300000, guid: 8f1ab92dcabe5ed4ea53748cd8e2ea9f, type: 3}
