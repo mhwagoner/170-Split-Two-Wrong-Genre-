@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SampleDamagable : MonoBehaviour, IDamageable
 {
@@ -27,6 +28,8 @@ public class SampleDamagable : MonoBehaviour, IDamageable
     private void Death()
     {
         OnDeath?.Invoke();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
         Destroy(gameObject);
     }
 }
